@@ -22,7 +22,7 @@ while True:
     
 
 # green
-    low_green = np.array([80,72,46])  #79 141  31] [ 99 161 111
+    low_green = np.array([80,72,46])  
     high_green = np.array([93,178,121])
     green_mask = cv2.inRange(hsv_frame, low_green, high_green)
     green = cv2.bitwise_and(frame, frame, mask=green_mask)
@@ -91,7 +91,7 @@ while True:
       
     for pic, contour in enumerate(contours):
         area = cv2.contourArea(contour)
-        if(area > 5100 and area < 5900):
+        if(area > 4700 and area < 5900):
             x, y, w, h = cv2.boundingRect(contour)
             imageFrame = cv2.rectangle(frame, (x, y), 
                                        (x + w, y + h), 
